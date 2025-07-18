@@ -1,0 +1,11 @@
+profile: "default"
+
+logging:
+  enabled: true
+  log_file: "ams_install.log"
+  verbose: true
+
+defaults:
+  retry_failed: true
+  dry_run: false
+  confirm_shell: false

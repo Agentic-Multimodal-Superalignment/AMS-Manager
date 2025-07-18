@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-07-14",
+    "description": "Merlin's Simple Tool Registry - Just the essentials!",
+    "created_by": "Merlin 🧙‍♂️"
+  },
+  "tools": [
+    {
+      "name": "comfyui",
+      "display_name": "ComfyUI - Node-Based Stable Diffusion",
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "description": "Powerful node-based interface for Stable Diffusion",
+      "install_commands": [
+        "git clone https://github.com/comfyanonymous/ComfyUI.git",
+        "cd ComfyUI",
+        "uv venv .venv",
+        ".venv\\Scripts\\activate && uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128",
+        ".venv\\Scripts\\activate && uv pip install -r requirements.txt"
+      ],
+      "start_command": "cd ComfyUI && .venv\\Scripts\\python main.py",
+      "web_interface": "http://localhost:8188"
+    },
+    {
+      "name": "fluxgym",
+      "display_name": "FluxGym - FLUX LoRA Training",
+      "url": "https://github.com/cocktailpeanut/fluxgym",
+      "description": "Simple FLUX LoRA training environment",
+      "install_commands": [
+        "git clone https://github.com/cocktailpeanut/fluxgym",
+        "cd fluxgym",
+        "git clone -b sd3 https://github.com/kohya-ss/sd-scripts",
+        "uv venv env",
+        "env\\Scripts\\activate && cd sd-scripts && uv pip install -r requirements.txt",
+        "env\\Scripts\\activate && cd .. && uv pip install -r requirements.txt",
+        "env\\Scripts\\activate && uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121"
+      ],
+      "start_command": "cd fluxgym && env\\Scripts\\activate && python app.py",
+      "web_interface": "http://localhost:7860"
+    },
+    {
+      "name": "open-webui",
+      "display_name": "Open WebUI - Chat Interface",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly chat interface for LLMs",
+      "install_commands": [
+        "uv pip install open-webui"
+      ],
+      "start_command": "open-webui serve",
+      "web_interface": "http://localhost:8080"
+    },
+    {
+      "name": "onetrainer",
+      "display_name": "OneTrainer - Advanced Training Suite", 
+      "url": "https://github.com/Nerogar/OneTrainer",
+      "description": "Comprehensive AI model training interface",
+      "install_commands": [
+        "git clone https://github.com/Nerogar/OneTrainer.git",
+        "cd OneTrainer",
+        "uv venv .venv", 
+        ".venv\\Scripts\\activate && uv pip install -r requirements.txt"
+      ],
+      "start_command": "cd OneTrainer && .venv\\Scripts\\python scripts\\train_ui.py",
+      "gui_mode": true
+    }
+  ],
+  "notes": {
+    "package_manager": "Uses UV for fast Python package management",
+    "environment": "Each tool gets its own virtual environment", 
+    "location": "All tools install to AIML_PROJECTS_HOME directory",
+    "wizard_note": "🧙‍♂️ Keep it simple, keep it magical!"
+  }
+}
