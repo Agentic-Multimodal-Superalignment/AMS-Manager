@@ -52,6 +52,17 @@ python -m venv .venv
 ```
 
 3. **Install dependencies:**
+
+#### Option A: Modern Installation (Recommended)
+```bash
+# Install from pyproject.toml (includes all dependencies)
+uv pip install -e .
+
+# Or install with optional features
+uv pip install -e ".[full,dev]"
+```
+
+#### Option B: Traditional Installation
 ```bash
 # Using UV
 uv pip install -r requirements.txt
@@ -79,6 +90,15 @@ export AIML_PROJECTS_HOME=/path/to/your/aiml_projects
 ```
 
 6. **Run Merlin:**
+
+#### Option A: Using CLI Entry Point (After Installation with -e .)
+```bash
+merlin --help
+merlin status  # Check system status
+merlin         # Interactive menu
+```
+
+#### Option B: Direct Python Execution
 ```bash
 python src/ams_manager/main.py
 ```

@@ -11,6 +11,13 @@ This package provides:
 - Ollama model management and hot-swapping
 - Documentation querying and auto-configuration
 - Manifest-based tool collections for sharing
+
+Installation:
+    # Modern (recommended):
+    uv pip install -e .
+    
+    # Traditional:
+    uv pip install -r requirements.txt
 """
 
 __version__ = "1.0.0"
